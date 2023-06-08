@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p>Q1. Write the code to access element which is having id as "text"</p>
+    <h3 id="id">hello</h3>
+    <script>
+let id= document.getElementById('id').innerText="Text";
+    </script>
+    <hr>
+
+   <p> pQ2. Write the code to access element which is having tag as "h1"</p>
+    <h1 id="ele">Hello Wolrd</h1>
+
+    <script>
+        document.getElementById('ele').innerText="Hello World"
+        let h1=document.getElementsByTagName('h1').innerText="Hello001";
+    </script>
+    <pre>
+        let H1=document.getElementsByTagName('h1');
+H1.innerHTML="Hello ";
+console.log(H1);
+    </pre>
+    
+    <hr>
+
+<p class="box">Q3.	Write the code to access element which is having class as "box"</p>
+<script>
+    const boxElement = document.querySelector('.box');
+
+// Check if the element exists
+if (boxElement) {
+  // Perform actions on the element
+  boxElement.style.backgroundColor = 'red';
+  console.log(boxElement.textContent);
+} else {
+  console.log("Element with class 'box' not found.");
+}
+</script>
+
+
+<hr>
+
+<p>Q4.	"<h1>Hello </h1>
+
+
+
+    Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</p>
+<pre>let elem=document.querySelectorAll('h1');
+    elem.innerHTML=elem.innerHTML="Hello World";</pre>
+
+    <hr>
+
+    <p>Q5.	Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</p>
+    <script>
+        function replaceText() {
+          // Get the element with the ID "content"
+          const contentElement = document.getElementById('content');
+    
+          // Replace the text content
+          contentElement.textContent = 'Welcome to Elevation academy';
+        }
+      </script>
+    <hr>
+
+    <p>Q6.	"<h1>Hello </h1>
+        
+        Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"</p>
+        <script>
+            // Get the h1 element
+const h1Element = document.querySelector('h1');
+
+// Add the style attribute
+h1Element.style.color = 'red';
+
+// Add the id attribute
+h1Element.id = 'heading';
+        </script>
+        <hr>
+
+
+        <p>Q7.	Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</p>
+
+        <script>
+            function changeFlexDirection() {
+              const container = document.getElementById('container');
+              if (container.style.flexDirection === 'row') {
+                container.style.flexDirection = 'column'; // Change to vertical direction
+              } else {
+                container.style.flexDirection = 'row'; // Change to horizontal direction
+              }
+            }
+          </script>
+
+        <hr>
+
+        <p>Q8.	What’s the difference between window vs document?</p>
+         
+        <p>Document: The document object represents the HTML 
+            and Window: The window object represents the global window
+        </p>
+
+        <hr>
+
+
+        <p>Q9	Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</p>
+        <h1 id="clock">00:00:00</h1>
+        <script>
+            function updateClock() {
+              const clockElement = document.getElementById('clock');
+              const currentTime = new Date();
+        
+              const hours = String(currentTime.getHours()).padStart(2, '0');
+              const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+              const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+        
+              const timeString = hours + ':' + minutes + ':' + seconds;
+        
+              clockElement.textContent = timeString;
+            }
+        
+            // Update the clock immediately
+            updateClock();
+        
+            // Update the clock every second
+            setInterval(updateClock, 1000);
+          </script>
+
+        
+        
+</body>
+<script src="./Dom.js"></script>
+</html>
